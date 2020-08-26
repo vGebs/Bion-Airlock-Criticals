@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA4F84AD24B3DAE900116CEA /* BLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F84AC24B3DAE900116CEA /* BLE.swift */; };
+		FA7362D924E49AB80067A481 /* DoorStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7362D824E49AB80067A481 /* DoorStatusView.swift */; };
+		FA765F862489C8D0006CB76A /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA765F852489C8D0006CB76A /* NotificationsView.swift */; };
+		FA771B58248C3877000774D7 /* NotificationsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA771B57248C3877000774D7 /* NotificationsDetail.swift */; };
+		FA771B5A248C45C5000774D7 /* NotificationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA771B59248C45C5000774D7 /* NotificationStore.swift */; };
+		FA771B5F248C4E67000774D7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA771B5E248C4E67000774D7 /* SettingsView.swift */; };
+		FA771B65248C8C0C000774D7 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = FA771B64248C8C0C000774D7 /* SwiftUICharts */; };
+		FA771B6A248CA4A4000774D7 /* SmallCriticalCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA771B69248CA4A4000774D7 /* SmallCriticalCards.swift */; };
+		FAA29FB62485C0D00046CD32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA29FB52485C0D00046CD32 /* AppDelegate.swift */; };
+		FAA29FB82485C0D00046CD32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA29FB72485C0D00046CD32 /* SceneDelegate.swift */; };
+		FAA29FBA2485C0D00046CD32 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA29FB92485C0D00046CD32 /* ContentView.swift */; };
+		FAA29FBC2485C0D50046CD32 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA29FBB2485C0D50046CD32 /* Assets.xcassets */; };
+		FAA29FBF2485C0D50046CD32 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAA29FBE2485C0D50046CD32 /* Preview Assets.xcassets */; };
+		FAA29FC22485C0D50046CD32 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAA29FC02485C0D50046CD32 /* LaunchScreen.storyboard */; };
+		FAA29FCA2485C1250046CD32 /* Planning.rtf in Resources */ = {isa = PBXBuildFile; fileRef = FAA29FC92485C1250046CD32 /* Planning.rtf */; };
+		FAA29FCC248615BA0046CD32 /* CriticalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA29FCB248615BA0046CD32 /* CriticalCardView.swift */; };
+		FAA29FCE24862CA90046CD32 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA29FCD24862CA90046CD32 /* RingView.swift */; };
+		FAA29FD024862E530046CD32 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA29FCF24862E530046CD32 /* Modifiers.swift */; };
+		FAF809B124CF7F4F00020D07 /* ChartCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF809B024CF7F4F00020D07 /* ChartCardView.swift */; };
+		FAF809B724D4D15900020D07 /* CriticalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF809B624D4D15900020D07 /* CriticalData.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		FA4F84AC24B3DAE900116CEA /* BLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLE.swift; sourceTree = "<group>"; };
+		FA7362D824E49AB80067A481 /* DoorStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorStatusView.swift; sourceTree = "<group>"; };
+		FA765F852489C8D0006CB76A /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		FA771B57248C3877000774D7 /* NotificationsDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsDetail.swift; sourceTree = "<group>"; };
+		FA771B59248C45C5000774D7 /* NotificationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStore.swift; sourceTree = "<group>"; };
+		FA771B5E248C4E67000774D7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FA771B69248CA4A4000774D7 /* SmallCriticalCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCriticalCards.swift; sourceTree = "<group>"; };
+		FAA29FB22485C0D00046CD32 /* Bion Criticals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bion Criticals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FAA29FB52485C0D00046CD32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FAA29FB72485C0D00046CD32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		FAA29FB92485C0D00046CD32 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FAA29FBB2485C0D50046CD32 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FAA29FBE2485C0D50046CD32 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FAA29FC12485C0D50046CD32 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		FAA29FC32485C0D50046CD32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAA29FC92485C1250046CD32 /* Planning.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Planning.rtf; sourceTree = "<group>"; };
+		FAA29FCB248615BA0046CD32 /* CriticalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriticalCardView.swift; sourceTree = "<group>"; };
+		FAA29FCD24862CA90046CD32 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
+		FAA29FCF24862E530046CD32 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
+		FAF809B024CF7F4F00020D07 /* ChartCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCardView.swift; sourceTree = "<group>"; };
+		FAF809B624D4D15900020D07 /* CriticalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriticalData.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FAA29FAF2485C0D00046CD32 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA771B65248C8C0C000774D7 /* SwiftUICharts in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA771B5B248C4DDA000774D7 /* Notifications Model & View */ = {
+			isa = PBXGroup;
+			children = (
+				FA765F852489C8D0006CB76A /* NotificationsView.swift */,
+				FA771B57248C3877000774D7 /* NotificationsDetail.swift */,
+				FA771B59248C45C5000774D7 /* NotificationStore.swift */,
+			);
+			path = "Notifications Model & View";
+			sourceTree = "<group>";
+		};
+		FA771B5C248C4E02000774D7 /* Reusable Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAA29FCB248615BA0046CD32 /* CriticalCardView.swift */,
+				FAA29FCD24862CA90046CD32 /* RingView.swift */,
+				FA771B69248CA4A4000774D7 /* SmallCriticalCards.swift */,
+				FAF809B024CF7F4F00020D07 /* ChartCardView.swift */,
+				FA7362D824E49AB80067A481 /* DoorStatusView.swift */,
+			);
+			path = "Reusable Views";
+			sourceTree = "<group>";
+		};
+		FA771B5D248C4E3B000774D7 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				FAA29FCF24862E530046CD32 /* Modifiers.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		FA771B60248C4EE9000774D7 /* Settings Model & View */ = {
+			isa = PBXGroup;
+			children = (
+				FA771B5E248C4E67000774D7 /* SettingsView.swift */,
+				FA4F84AC24B3DAE900116CEA /* BLE.swift */,
+			);
+			path = "Settings Model & View";
+			sourceTree = "<group>";
+		};
+		FAA29FA92485C0D00046CD32 = {
+			isa = PBXGroup;
+			children = (
+				FAA29FB42485C0D00046CD32 /* Bion Criticals */,
+				FAA29FB32485C0D00046CD32 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FAA29FB32485C0D00046CD32 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FAA29FB22485C0D00046CD32 /* Bion Criticals.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FAA29FB42485C0D00046CD32 /* Bion Criticals */ = {
+			isa = PBXGroup;
+			children = (
+				FAA29FB52485C0D00046CD32 /* AppDelegate.swift */,
+				FAA29FB72485C0D00046CD32 /* SceneDelegate.swift */,
+				FAA29FB92485C0D00046CD32 /* ContentView.swift */,
+				FA771B5C248C4E02000774D7 /* Reusable Views */,
+				FAF809BA24D6920C00020D07 /* Data */,
+				FA771B60248C4EE9000774D7 /* Settings Model & View */,
+				FA771B5B248C4DDA000774D7 /* Notifications Model & View */,
+				FA771B5D248C4E3B000774D7 /* Modifiers */,
+				FAA29FC92485C1250046CD32 /* Planning.rtf */,
+				FAA29FBB2485C0D50046CD32 /* Assets.xcassets */,
+				FAA29FC02485C0D50046CD32 /* LaunchScreen.storyboard */,
+				FAA29FC32485C0D50046CD32 /* Info.plist */,
+				FAA29FBD2485C0D50046CD32 /* Preview Content */,
+			);
+			path = "Bion Criticals";
+			sourceTree = "<group>";
+		};
+		FAA29FBD2485C0D50046CD32 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FAA29FBE2485C0D50046CD32 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FAF809BA24D6920C00020D07 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FAF809B624D4D15900020D07 /* CriticalData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FAA29FB12485C0D00046CD32 /* Bion Criticals */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FAA29FC62485C0D50046CD32 /* Build configuration list for PBXNativeTarget "Bion Criticals" */;
+			buildPhases = (
+				FAA29FAE2485C0D00046CD32 /* Sources */,
+				FAA29FAF2485C0D00046CD32 /* Frameworks */,
+				FAA29FB02485C0D00046CD32 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Bion Criticals";
+			packageProductDependencies = (
+				FA771B64248C8C0C000774D7 /* SwiftUICharts */,
+			);
+			productName = "Bion Criticals";
+			productReference = FAA29FB22485C0D00046CD32 /* Bion Criticals.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FAA29FAA2485C0D00046CD32 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Brick Squad";
+				TargetAttributes = {
+					FAA29FB12485C0D00046CD32 = {
+						CreatedOnToolsVersion = 11.5;
+					};
+				};
+			};
+			buildConfigurationList = FAA29FAD2485C0D00046CD32 /* Build configuration list for PBXProject "Bion Criticals" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FAA29FA92485C0D00046CD32;
+			packageReferences = (
+				FA771B63248C8C0C000774D7 /* XCRemoteSwiftPackageReference "ChartView" */,
+			);
+			productRefGroup = FAA29FB32485C0D00046CD32 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FAA29FB12485C0D00046CD32 /* Bion Criticals */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FAA29FB02485C0D00046CD32 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FAA29FC22485C0D50046CD32 /* LaunchScreen.storyboard in Resources */,
+				FAA29FCA2485C1250046CD32 /* Planning.rtf in Resources */,
+				FAA29FBF2485C0D50046CD32 /* Preview Assets.xcassets in Resources */,
+				FAA29FBC2485C0D50046CD32 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FAA29FAE2485C0D00046CD32 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA771B5A248C45C5000774D7 /* NotificationStore.swift in Sources */,
+				FAA29FCE24862CA90046CD32 /* RingView.swift in Sources */,
+				FA771B58248C3877000774D7 /* NotificationsDetail.swift in Sources */,
+				FAA29FB62485C0D00046CD32 /* AppDelegate.swift in Sources */,
+				FA7362D924E49AB80067A481 /* DoorStatusView.swift in Sources */,
+				FAA29FCC248615BA0046CD32 /* CriticalCardView.swift in Sources */,
+				FA771B5F248C4E67000774D7 /* SettingsView.swift in Sources */,
+				FAA29FB82485C0D00046CD32 /* SceneDelegate.swift in Sources */,
+				FAF809B724D4D15900020D07 /* CriticalData.swift in Sources */,
+				FA4F84AD24B3DAE900116CEA /* BLE.swift in Sources */,
+				FAF809B124CF7F4F00020D07 /* ChartCardView.swift in Sources */,
+				FA771B6A248CA4A4000774D7 /* SmallCriticalCards.swift in Sources */,
+				FAA29FD024862E530046CD32 /* Modifiers.swift in Sources */,
+				FAA29FBA2485C0D00046CD32 /* ContentView.swift in Sources */,
+				FA765F862489C8D0006CB76A /* NotificationsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		FAA29FC02485C0D50046CD32 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				FAA29FC12485C0D50046CD32 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		FAA29FC42485C0D50046CD32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FAA29FC52485C0D50046CD32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FAA29FC72485C0D50046CD32 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Bion Criticals/Preview Content\"";
+				DEVELOPMENT_TEAM = TBMU9UG97G;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Bion Criticals/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Brick-Squad.Bion-Criticals";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FAA29FC82485C0D50046CD32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"Bion Criticals/Preview Content\"";
+				DEVELOPMENT_TEAM = TBMU9UG97G;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "Bion Criticals/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.Brick-Squad.Bion-Criticals";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FAA29FAD2485C0D00046CD32 /* Build configuration list for PBXProject "Bion Criticals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAA29FC42485C0D50046CD32 /* Debug */,
+				FAA29FC52485C0D50046CD32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FAA29FC62485C0D50046CD32 /* Build configuration list for PBXNativeTarget "Bion Criticals" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FAA29FC72485C0D50046CD32 /* Debug */,
+				FAA29FC82485C0D50046CD32 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA771B63248C8C0C000774D7 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/ChartView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA771B64248C8C0C000774D7 /* SwiftUICharts */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA771B63248C8C0C000774D7 /* XCRemoteSwiftPackageReference "ChartView" */;
+			productName = SwiftUICharts;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FAA29FAA2485C0D00046CD32 /* Project object */;
+}
