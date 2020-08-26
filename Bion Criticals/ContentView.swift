@@ -12,6 +12,8 @@ struct ContentView: View {
     @State var isLock: Bool = false
     @State var showConnect: Bool = false
     @State var showCharts: Bool = false
+    @State var showCharts1: Bool = false
+    @State var whichChart: Int = 0
     @State var connectedBLE: Bool = false
     @State var bottomState = CGSize.zero
     
@@ -45,14 +47,17 @@ struct ContentView: View {
                     CriticalCardView(critical: item)
                         .padding(.bottom, 5)
                         .onTapGesture {
-                            if item.chartType == "chart"{
+                            if item.title == "Cabin Pressure"{
+                                self.whichChart = 0
                                 self.showCharts.toggle()
                             }
-                            else if item.chartType == "ringView"{
-                                
+                            else if item.title == "Door Locks"{
+                                self.whichChart = 1
+                                self.showCharts.toggle()
                             }
-                            else if item.chartType == "switch"{
-                                
+                            else if item.title == "Cabin Temperature"{
+                                self.whichChart = 2
+                                self.showCharts.toggle()
                             }
                         }
                 }
@@ -69,19 +74,36 @@ struct ContentView: View {
                 ForEach(Gases){ item in
                     CriticalCardView(critical: item)
                         .padding(.bottom, 5)
+                        .onTapGesture {
+                            if item.title == "CO Level"{
+                                self.whichChart = 0
+                                self.showCharts1.toggle()
+                            }
+                            else if item.title == "CO2 Level"{
+                                self.whichChart = 1
+                                self.showCharts1.toggle()
+                            }
+                            else if item.title == "NO Level"{
+                                self.whichChart = 2
+                                self.showCharts1.toggle()
+                            }
+                        }
                 }
             }
-            .blur(radius: showConnect || showCharts ? 30 : 0)
+            .blur(radius: showConnect || showCharts || showCharts1 ? 30 : 0)
             
             Color.black
                 .edgesIgnoringSafeArea(.all)
-                .opacity(showConnect || showCharts ? 0.1 : 0)
+                .opacity(showConnect || showCharts || showCharts1 ? 0.1 : 0)
                 .onTapGesture {
                     if self.showConnect == true {
                         self.showConnect.toggle()
                     }
                     if self.showCharts == true {
                         self.showCharts.toggle()
+                    }
+                    if self.showCharts1 == true {
+                        self.showCharts1.toggle()
                     }
                 }
             
@@ -90,7 +112,7 @@ struct ContentView: View {
                 .opacity(showConnect ? 1 : 0)
                 .animation(.spring())
             
-            ChartCardView()
+            ChartCardView(title: Controls[whichChart].title)
                 .opacity(showCharts ? 1 : 0)
                 .offset(x: 0, y: showCharts ? 280 : 1000)
                 .offset(y: bottomState.height)
@@ -112,6 +134,27 @@ struct ContentView: View {
                     }
                 )
             
+            ChartCardView(title: Gases[whichChart].title)
+                .opacity(showCharts1 ? 1 : 0)
+                .offset(x: 0, y: showCharts1 ? 280 : 1000)
+                .offset(y: bottomState.height)
+                .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
+                .gesture(
+                    DragGesture().onChanged { value in
+                        self.bottomState = value.translation
+                        if self.bottomState.height < -200 {
+                            self.bottomState.height = 0
+                        }
+                    }
+                    .onEnded { value in
+                        if self.bottomState.height > 100 {
+                            self.showCharts = false
+                            self.bottomState = .zero
+                        } else {
+                            self.bottomState.height = 0
+                        }
+                    }
+                )
         }
     }
 }

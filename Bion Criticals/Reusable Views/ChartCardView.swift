@@ -12,6 +12,7 @@ import SwiftUICharts
 struct ChartCardView: View {
     var title = "Cabin Pressure"
     var date = "Jun 12, 8:30.36"
+    var data: [Double] = [8,23,54,32,12,37,7,23,43]
     
     var body: some View {
         
@@ -22,42 +23,16 @@ struct ChartCardView: View {
                 .opacity(0.2)
             
             ZStack {
-                LineView(data: [8,23,54,32,12,37,7,23,43])
+                LineView(data: data)
                     .frame(width: screen.width - 40, height: 150)
                     .offset(y: 9)
                 HStack {
                     Spacer()
                     Text(title)
                         .font(.system(size: 25, weight: .bold))
-                        .offset(y: -33)
+                        .offset(y: -45)
                         .padding(.horizontal, 15)
                 }
-                
-                HStack {
-                        
-                    ZStack {
-                        Color(.black)
-                            .frame(width: 100, height: 30)
-                            .cornerRadius(15)
-                            .shadow(radius: 10)
-
-                        Text("Pressurize")
-                            .foregroundColor(.white)
-                    }.offset(x: 65)
-                    
-                    Spacer()
-                    
-                    ZStack {
-                        Color(.white)
-                            .frame(width: 120, height: 30)
-                            .cornerRadius(15)
-                            .shadow(radius: 5)
-                        
-                        Text("Depressurize")
-                    }.offset(x: -40)
-                    
-                }
-                .offset(y: -85)
                 
                 Text(date)
                     .font(.system(size: 14, weight: .light))

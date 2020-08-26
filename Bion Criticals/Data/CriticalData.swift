@@ -29,7 +29,6 @@ struct Critical: Identifiable{
     var status: String      //ie Pressurizing
     var color: Color        //ie (good == .green, decent == .yellow, bad == .red)
     var image: String       //SF symbols only. ie "rectangle.compress.vertical"
-    var chartType: String   //ie chart(pressure/gas), switch (door), ringview(temp)
 }
 
 var Controls = [
@@ -40,8 +39,7 @@ var Controls = [
         units: "PSI",
         status: "Pressurizing",
         color: .green,
-        image: "rectangle.compress.vertical",
-        chartType: "chart"
+        image: "rectangle.compress.vertical"
     ),
     Critical(
         title: "Door Locks",
@@ -50,8 +48,7 @@ var Controls = [
         units: "Binary",
         status: "Locked",
         color: .green,
-        image: "lock.circle",
-        chartType: "switch"
+        image: "lock.circle"
     ),
     Critical(
         title: "Cabin Temperature",
@@ -60,8 +57,7 @@ var Controls = [
         units: "c",
         status: "Heat activated",
         color: .yellow,
-        image: "thermometer",
-        chartType: "ringview"
+        image: "thermometer"
     )
 ]
 
@@ -73,8 +69,7 @@ var Gases = [
         units: "ppm",
         status: "Acceptable",
         color: .yellow,
-        image: "leaf.arrow.circlepath",
-        chartType: "chart"
+        image: "leaf.arrow.circlepath"
     ),
     Critical(
         title: "CO2 Level",
@@ -83,8 +78,7 @@ var Gases = [
         units: "ppm",
         status: "Unacceptable",
         color: .red,
-        image: "leaf.arrow.circlepath",
-        chartType: "chart"
+        image: "leaf.arrow.circlepath"
     ),
     Critical(
         title: "NO Level",
@@ -93,7 +87,6 @@ var Gases = [
         units: "ppm",
         status: "Safe",
         color: .green,
-        image: "leaf.arrow.circlepath",
-        chartType: "chart"
+        image: "leaf.arrow.circlepath"
     )
 ]
