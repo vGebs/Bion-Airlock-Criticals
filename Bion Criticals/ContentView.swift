@@ -12,99 +12,30 @@ struct ContentView: View {
     @State var isLock: Bool = false
     @State var showConnect: Bool = false
     @State var showCharts: Bool = false
-    @State var showCharts1: Bool = false
     @State var whichChart: Int = 0
     @State var connectedBLE: Bool = false
     @State var bottomState = CGSize.zero
+    @State var showControls: Int = 1
     
     var body: some View {
         
         ZStack {
-            ScrollView {
-                ZStack {
-                    Color.green
-                        .frame(height: 800)
-                        .opacity(0.3)
-                        .cornerRadius(25)
-                        .shadow(radius: 25)
-                        .offset(y: -360)
-                    
-                    Header(showConnect: $showConnect)
-                }
-                .frame(height:150)
-                
-                HStack {
-                    Text("Cabin Controls")
-                        .font(.system(size: 25, weight: .bold))
-                        .padding(.horizontal)
-                        .padding(.leading, 5)
-                        
-                    Spacer()
-                }
-                
-                
-                ForEach(Controls){ item in
-                    CriticalCardView(critical: item)
-                        .padding(.bottom, 5)
-                        .onTapGesture {
-                            if item.title == "Cabin Pressure"{
-                                self.whichChart = 0
-                                self.showCharts.toggle()
-                            }
-                            else if item.title == "Door Locks"{
-                                self.whichChart = 1
-                                self.showCharts.toggle()
-                            }
-                            else if item.title == "Cabin Temperature"{
-                                self.whichChart = 2
-                                self.showCharts.toggle()
-                            }
-                        }
-                }
-                
-                HStack{
-                    Text("Gas Levels")
-                        .font(.system(size: 25, weight: .bold))
-                        .padding(.horizontal)
-                        .padding(.leading, 5)
-
-                    Spacer()
-                }
-                
-                ForEach(Gases){ item in
-                    CriticalCardView(critical: item)
-                        .padding(.bottom, 5)
-                        .onTapGesture {
-                            if item.title == "CO Level"{
-                                self.whichChart = 0
-                                self.showCharts1.toggle()
-                            }
-                            else if item.title == "CO2 Level"{
-                                self.whichChart = 1
-                                self.showCharts1.toggle()
-                            }
-                            else if item.title == "NO Level"{
-                                self.whichChart = 2
-                                self.showCharts1.toggle()
-                            }
-                        }
-                    
-                }
-            }
-            .blur(radius: showConnect || showCharts || showCharts1 ? 30 : 0)
+            ControlsView(showConnect: $showConnect)
+                .opacity(showControls == 1 ? 1 : 0)
+            
+            ChartsView(showConnect: $showConnect)
+                .opacity(showControls == 0 ? 1 : 0)
+            
+            NavBar(showControls: $showControls)
+                .offset(y: screen.height / 2.155)
+                .blur(radius: showConnect ? 30 : 0)
             
             Color.black
                 .edgesIgnoringSafeArea(.all)
-                .opacity(showConnect || showCharts || showCharts1 ? 0.1 : 0)
+                .opacity(showConnect || showCharts ? 0.1 : 0)
                 .onTapGesture {
                     if self.showConnect == true {
                         self.showConnect.toggle()
-                    }
-                    if self.showCharts == true {
-                        self.showCharts.toggle()
-                    }
-                    if self.showCharts1 == true {
-                        self.showCharts1.toggle()
                     }
                 }
             
@@ -112,50 +43,6 @@ struct ContentView: View {
                 .offset(x: showConnect ? 0 : 100)
                 .opacity(showConnect ? 1 : 0)
                 .animation(.spring())
-            
-            ChartCardView(title: Controls[whichChart].title)
-                .opacity(showCharts ? 1 : 0)
-                .offset(x: 0, y: showCharts ? 280 : 1000)
-                .offset(y: bottomState.height)
-                .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
-                .gesture(
-                    DragGesture().onChanged { value in
-                        self.bottomState = value.translation
-                        if self.bottomState.height < -200 {
-                            self.bottomState.height = 0
-                        }
-                    }
-                    .onEnded { value in
-                        if self.bottomState.height > 100 {
-                            self.showCharts = false
-                            self.bottomState = .zero
-                        } else {
-                            self.bottomState.height = 0
-                        }
-                    }
-                )
-            
-            ChartCardView(title: Gases[whichChart].title)
-                .opacity(showCharts1 ? 1 : 0)
-                .offset(x: 0, y: showCharts1 ? 280 : 1000)
-                .offset(y: bottomState.height)
-                .animation(.timingCurve(0.2, 0.8, 0.2, 1, duration: 0.8))
-                .gesture(
-                    DragGesture().onChanged { value in
-                        self.bottomState = value.translation
-                        if self.bottomState.height < -200 {
-                            self.bottomState.height = 0
-                        }
-                    }
-                    .onEnded { value in
-                        if self.bottomState.height > 100 {
-                            self.showCharts1 = false
-                            self.bottomState = .zero
-                        } else {
-                            self.bottomState.height = 0
-                        }
-                    }
-                )
         }
     }
 }
@@ -172,12 +59,12 @@ struct Header: View {
     
     var body: some View {
         ZStack {
-//            Color.green
-//                .frame(height: 160)
-//                .opacity(0.3)
-//                .cornerRadius(25)
-//                .shadow(radius: 25)
-//                .offset(y: -50)
+            Color.green
+                .frame(height: 800)
+                .opacity(0.3)
+                .cornerRadius(25)
+                .shadow(radius: 25)
+                .offset(y: -360)
             
             VStack {
                 HStack{
@@ -226,5 +113,44 @@ struct Header: View {
                 }
             }
         }
+    }
+}
+
+struct ControlsView: View {
+    @Binding var showConnect: Bool
+    
+    var body: some View {
+        ScrollView {
+            
+            Header(showConnect: $showConnect)
+                .frame(height:150)
+            
+            HStack {
+                Text("Cabin Controls")
+                    .font(.system(size: 25, weight: .bold))
+                    .padding(.horizontal)
+                    .padding(.leading, 5)
+                
+                Spacer()
+            }
+            
+            
+            ForEach(Controls){ item in
+                CriticalCardView(critical: item)
+                    .padding(.bottom, 5)
+                    .onTapGesture {
+                        if item.title == "Cabin Pressure"{
+                            
+                        }
+                        else if item.title == "Door Locks"{
+                            
+                        }
+                        else if item.title == "Cabin Temperature"{
+                            
+                        }
+                }
+            }
+        }
+        .blur(radius: showConnect ? 30 : 0)
     }
 }

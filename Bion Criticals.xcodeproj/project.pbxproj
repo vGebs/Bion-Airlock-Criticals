@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA17B97524F8491A00C51CB8 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17B97424F8491A00C51CB8 /* NavBar.swift */; };
+		FA17B97724F852AD00C51CB8 /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17B97624F852AD00C51CB8 /* ChartsView.swift */; };
 		FA4F84AD24B3DAE900116CEA /* BLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F84AC24B3DAE900116CEA /* BLE.swift */; };
 		FA7362D924E49AB80067A481 /* DoorStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7362D824E49AB80067A481 /* DoorStatusView.swift */; };
 		FA765F862489C8D0006CB76A /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA765F852489C8D0006CB76A /* NotificationsView.swift */; };
@@ -30,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA17B97424F8491A00C51CB8 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		FA17B97624F852AD00C51CB8 /* ChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
 		FA4F84AC24B3DAE900116CEA /* BLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLE.swift; sourceTree = "<group>"; };
 		FA7362D824E49AB80067A481 /* DoorStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorStatusView.swift; sourceTree = "<group>"; };
 		FA765F852489C8D0006CB76A /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
@@ -83,6 +87,8 @@
 				FA771B69248CA4A4000774D7 /* SmallCriticalCards.swift */,
 				FAF809B024CF7F4F00020D07 /* ChartCardView.swift */,
 				FA7362D824E49AB80067A481 /* DoorStatusView.swift */,
+				FA17B97424F8491A00C51CB8 /* NavBar.swift */,
+				FA17B97624F852AD00C51CB8 /* ChartsView.swift */,
 			);
 			path = "Reusable Views";
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA771B5A248C45C5000774D7 /* NotificationStore.swift in Sources */,
+				FA17B97524F8491A00C51CB8 /* NavBar.swift in Sources */,
 				FAA29FCE24862CA90046CD32 /* RingView.swift in Sources */,
 				FA771B58248C3877000774D7 /* NotificationsDetail.swift in Sources */,
 				FAA29FB62485C0D00046CD32 /* AppDelegate.swift in Sources */,
@@ -246,6 +253,7 @@
 				FA4F84AD24B3DAE900116CEA /* BLE.swift in Sources */,
 				FAF809B124CF7F4F00020D07 /* ChartCardView.swift in Sources */,
 				FA771B6A248CA4A4000774D7 /* SmallCriticalCards.swift in Sources */,
+				FA17B97724F852AD00C51CB8 /* ChartsView.swift in Sources */,
 				FAA29FD024862E530046CD32 /* Modifiers.swift in Sources */,
 				FAA29FBA2485C0D00046CD32 /* ContentView.swift in Sources */,
 				FA765F862489C8D0006CB76A /* NotificationsView.swift in Sources */,
