@@ -88,6 +88,7 @@ struct ContentView: View {
                                 self.showCharts1.toggle()
                             }
                         }
+                    
                 }
             }
             .blur(radius: showConnect || showCharts || showCharts1 ? 30 : 0)
@@ -148,7 +149,7 @@ struct ContentView: View {
                     }
                     .onEnded { value in
                         if self.bottomState.height > 100 {
-                            self.showCharts = false
+                            self.showCharts1 = false
                             self.bottomState = .zero
                         } else {
                             self.bottomState.height = 0
