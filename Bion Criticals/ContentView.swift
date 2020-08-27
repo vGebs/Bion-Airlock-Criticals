@@ -25,6 +25,7 @@ struct ContentView: View {
             
             ChartsView(showConnect: $showConnect)
                 .opacity(showControls == 0 ? 1 : 0)
+                .blur(radius: showConnect ? 30 : 0)
             
             NavBar(showControls: $showControls)
                 .offset(y: screen.height / 2.155)
