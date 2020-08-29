@@ -16,11 +16,12 @@ struct ContentView: View {
     @State var connectedBLE: Bool = false
     @State var bottomState = CGSize.zero
     @State var showControls: Int = 1
+    @State var tappedControl: Int = 0
     
     var body: some View {
         
         ZStack {
-            ControlsView(showConnect: $showConnect)
+            ControlsView(showConnect: $showConnect, tappedControl: $tappedControl)
                 .opacity(showControls == 1 ? 1 : 0)
             
             ChartsView(showConnect: $showConnect)
@@ -119,6 +120,7 @@ struct Header: View {
 
 struct ControlsView: View {
     @Binding var showConnect: Bool
+    @Binding var tappedControl: Int
     
     var body: some View {
         ScrollView {
@@ -136,19 +138,11 @@ struct ControlsView: View {
             }
             
             
-            ForEach(Controls){ item in
-                CriticalCardView(critical: item)
+            ForEach(Controls.indices){ index in
+                CriticalCardView(critical: Controls[index])
                     .padding(.bottom, 5)
                     .onTapGesture {
-                        if item.title == "Cabin Pressure"{
-                            
-                        }
-                        else if item.title == "Door Locks"{
-                            
-                        }
-                        else if item.title == "Cabin Temperature"{
-                            
-                        }
+                        self.tappedControl = index
                 }
             }
         }
