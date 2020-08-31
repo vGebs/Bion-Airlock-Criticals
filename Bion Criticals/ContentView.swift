@@ -16,10 +16,9 @@ struct ContentView: View {
     @State var connectedBLE: Bool = false
     @State var bottomState = CGSize.zero
     @State var showControls: Int = 1
-    @State var tappedControl: Int = 0
+    @State var tappedControl: Int = -1
     
     var body: some View {
-        
         ZStack {
             ControlsView(showConnect: $showConnect, tappedControl: $tappedControl)
                 .opacity(showControls == 1 ? 1 : 0)
@@ -30,21 +29,24 @@ struct ContentView: View {
             
             NavBar(showControls: $showControls)
                 .offset(y: screen.height / 2.155)
-                .blur(radius: showConnect ? 30 : 0)
+                .blur(radius: showConnect || tappedControl > -1 ? 30 : 0)
             
             Color.black
                 .edgesIgnoringSafeArea(.all)
-                .opacity(showConnect || showCharts ? 0.1 : 0)
+                .opacity(showConnect || showCharts || tappedControl > -1 ? 0.1 : 0)
                 .onTapGesture {
                     if self.showConnect == true {
                         self.showConnect.toggle()
                     }
+                    self.tappedControl = -1
                 }
             
             SettingsView(connectedBLE: $connectedBLE)
                 .offset(x: showConnect ? 0 : 100)
                 .opacity(showConnect ? 1 : 0)
                 .animation(.spring())
+            
+            Modals(tappedControl: $tappedControl)
         }
     }
 }
@@ -143,9 +145,25 @@ struct ControlsView: View {
                     .padding(.bottom, 5)
                     .onTapGesture {
                         self.tappedControl = index
-                }
+                    }
             }
         }
-        .blur(radius: showConnect ? 30 : 0)
+        .blur(radius: showConnect || tappedControl > -1 ? 30 : 0)
+    }
+}
+
+struct Modals: View {
+    @Binding var tappedControl: Int
+    var body: some View {
+        ZStack {
+            PressureModal()
+                .opacity(tappedControl == 0 ? 1 : 0)
+            
+            DoorModal()
+                .opacity(tappedControl == 1 ? 1 : 0)
+            
+            TempModal()
+                .opacity(tappedControl == 2 ? 1 : 0)
+        }
     }
 }

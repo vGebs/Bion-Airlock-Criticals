@@ -120,7 +120,6 @@ class BLE: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate {
             print("Unhandled Characteristic UUID: \(characteristic.uuid)")
       }
     }
-    
 }
 
 public extension String{

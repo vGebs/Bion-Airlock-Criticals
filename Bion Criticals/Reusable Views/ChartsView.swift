@@ -27,9 +27,11 @@ struct ChartsView: View {
             }
             
             ForEach(Controls){ control in
-                BarChartView(data: ChartData(points: [8,23,54,32,12,37,7,23,43, 45, 61, 73, 22]), title: control.title, form: ChartForm.large, cornerImage: Image(systemName: control.image))
+                if control.title != "Door Locks"{
+                    BarChartView(data: ChartData(points: [8,23,54,32,12,37,7,23,43, 45, 61, 73, 22]), title: control.title, form: ChartForm.large, cornerImage: Image(systemName: control.image))
                     .frame(width: screen.width - 20)
                     .padding(.bottom, 40)
+                }
             }
             
             HStack {
@@ -39,7 +41,6 @@ struct ChartsView: View {
                     .padding(.leading, 5)
                         
                 Spacer()
-                
             }
             
             ForEach(Gases){ gas in
