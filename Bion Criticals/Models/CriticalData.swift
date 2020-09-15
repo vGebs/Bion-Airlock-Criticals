@@ -78,28 +78,6 @@ struct Critical: Identifiable {
 }
 
 extension Critical{
-    private func getPressureStatus() -> String {
-        return "pressurized"
-    }
-    
-    private func getTempStatus() -> String {
-        return "Hello"
-    }
-    
-    private func getCoStatus() -> String {
-        return "Hello"
-    }
-    
-    private func getCo2Status() -> String {
-        return "Hello"
-    }
-    
-    private func getNoStatus() -> String {
-        return "Hello"
-    }
-}
-
-extension Critical{
     private func getCabinPressureColor() -> Color{
         if let currentReading = getCurrentReading(){
             if currentReading < 5{
@@ -128,16 +106,65 @@ extension Critical{
         return .purple
     }
     
-    private func getCoColor() -> Color {  //Waiting on sam
-        return .green
+    private func getCoColor() -> Color {
+        if let currentReading = getCurrentReading(){
+            if currentReading >= 75 {
+                return .red
+            } else if currentReading >= 30 && currentReading < 75 {
+                return .yellow
+            } else if currentReading < 30 {
+                return .green
+            }
+        }
+        return .purple
     }
     
-    private func getCo2Color() -> Color { //Waiting on sam
-        return .green
+    private func getCo2Color() -> Color {
+        if let currentReading = getCurrentReading(){
+            if currentReading >= 3000{
+                return .red
+            } else if currentReading >= 1000 && currentReading < 3000 {
+                return .yellow
+            } else if currentReading < 1000 {
+                return .green
+            }
+        }
+        return .purple
     }
     
-    private func getNoColor() -> Color { //Waiting on sam
+    private func getNoColor() -> Color {
+        if let currentReading = getCurrentReading(){
+            if currentReading >= 10{
+                return .red
+            } else if currentReading >= 5 && currentReading < 10{
+                return .yellow
+            } else if currentReading < 5 {
+                return .green
+            }
+        }
         return .green
+    }
+}
+
+extension Critical{
+    private func getPressureStatus() -> String {
+        return "pressurized"
+    }
+    
+    private func getTempStatus() -> String {
+        return "Hello"
+    }
+    
+    private func getCoStatus() -> String {
+        return "Hello"
+    }
+    
+    private func getCo2Status() -> String {
+        return "Hello"
+    }
+    
+    private func getNoStatus() -> String {
+        return "Hello"
     }
 }
 
