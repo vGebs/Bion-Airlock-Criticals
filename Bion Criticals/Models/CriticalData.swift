@@ -7,86 +7,190 @@
 //
 
 import SwiftUI
+//import Combine
 
-var pressureData = [1.1, 4.7, 10.2]
-var doorStatus: Double = 1
-var cabinTempData = [-45, -41.5, -22.4]
+class CriticalViewModel: ObservableObject{
+    @Published var controls: [Critical] = Controls
+    @Published var gases: [Critical] = Gases
+}
 
-func getLastDatum(data: [Double]) -> Double{
-    if let last = data.last{
-        return last
-    } else {
+struct Critical: Identifiable {
+    var id = UUID()
+    var uid: Int
+    var title: String       //ie Cabin Pressure
+    var indicator: String   //ie Pressure Level
+    var units: String       //ie PSI
+    var image: String       //SF symbols only. ie "rectangle.compress.vertical"
+    var data: [Double]?
+    
+    func getCurrentReading() -> Double?{
+        if let data = data?.last{
+            return data
+        }
         return 0
+    }
+    
+    func getColor() -> Color{
+        if title == "Cabin Pressure"{
+            return getCabinPressureColor()
+        } else if title == "Door Locks"{
+            if data?.last == 1{
+                return .green
+            } else{
+                return .red
+            }
+        } else if title == "Cabin Temperature"{
+            return getCabinTempColor()
+        } else if title == "CO Level"{
+            return getCoColor()
+        } else if title == "CO2 Level"{
+            return getCo2Color()
+        } else if title == "NO Level"{
+            return getNoColor()
+        }
+        return .purple
+    }
+    
+    func getStatus() -> String {
+        if title == "Cabin Pressure"{
+            return getPressureStatus()
+        } else if title == "Door Locks"{
+            if data?.last == 1{
+                return "Activated"
+            } else{
+                return "Deactivated"
+            }
+        } else if title == "Cabin Temperature"{
+            return getTempStatus()
+        } else if title == "CO Level"{
+            return getCoStatus()
+        } else if title == "CO2 Level"{
+            return getCo2Status()
+        } else if title == "NO Level"{
+            return getNoStatus()
+        }
+        return "error"
+    }
+    
+    func getLastFifteen() -> [Double]{
+        return [0,1]
     }
 }
 
-struct Critical: Identifiable{
-    var id = UUID()
-    var title: String       //ie Cabin Pressure
-    var indicator: String   //ie Pressure Level
-    var reading: Double     //ie 11
-    var units: String       //ie PSI
-    var status: String      //ie Pressurizing
-    var color: Color        //ie (good == .green, decent == .yellow, bad == .red)
-    var image: String       //SF symbols only. ie "rectangle.compress.vertical"
+extension Critical{
+    private func getPressureStatus() -> String {
+        return "pressurized"
+    }
+    
+    private func getTempStatus() -> String {
+        return "Hello"
+    }
+    
+    private func getCoStatus() -> String {
+        return "Hello"
+    }
+    
+    private func getCo2Status() -> String {
+        return "Hello"
+    }
+    
+    private func getNoStatus() -> String {
+        return "Hello"
+    }
+}
+
+extension Critical{
+    private func getCabinPressureColor() -> Color{
+        if let currentReading = getCurrentReading(){
+            if currentReading < 5{
+                return .red
+            } else if currentReading > 4 && currentReading < 8{
+                return .yellow
+            } else if currentReading > 7 && currentReading < 12 {
+                return .green
+            } else if currentReading > 11{
+                return .red
+            }
+        }
+        return .purple
+    }
+    
+    private func getCabinTempColor() -> Color{
+        if let currentReading = getCurrentReading(){
+            if currentReading < -10 {
+                return .blue
+            } else if currentReading > -9 && currentReading < 10{
+                return .yellow
+            } else if currentReading > 9 {
+                return .red
+            }
+        }
+        return .purple
+    }
+    
+    private func getCoColor() -> Color {  //Waiting on sam
+        return .green
+    }
+    
+    private func getCo2Color() -> Color { //Waiting on sam
+        return .green
+    }
+    
+    private func getNoColor() -> Color { //Waiting on sam
+        return .green
+    }
 }
 
 var Controls = [
     Critical(
+        uid: 0,
         title: "Cabin Pressure",
         indicator: "Pressure Level",
-        reading: getLastDatum(data: pressureData),
         units: "PSI",
-        status: "Pressurizing",
-        color: .green,
-        image: "rectangle.compress.vertical"
+        image: "rectangle.compress.vertical",
+        data: [7]
     ),
     Critical(
+        uid: 1,
         title: "Door Locks",
         indicator: "Activated",
-        reading: doorStatus,
-        units: "Binary",
-        status: "Locked",
-        color: .green,
-        image: "lock.circle"
+        units: "i/o",
+        image: "lock.circle",
+        data: [1.1, 4.7, 10.2]
     ),
     Critical(
+        uid: 2,
         title: "Cabin Temperature",
         indicator: "Temp",
-        reading: -40,
         units: "c",
-        status: "Heat activated",
-        color: .yellow,
-        image: "thermometer"
+        image: "thermometer",
+        data: [1.1, 4.7, 10.2]
     )
 ]
 
 var Gases = [
     Critical(
+        uid: 3,
         title: "CO Level",
         indicator: "Conc.",
-        reading: 22,
         units: "ppm",
-        status: "Acceptable",
-        color: .yellow,
-        image: "leaf.arrow.circlepath"
+        image: "leaf.arrow.circlepath",
+        data: [1.1, 4.7, 10.2]
     ),
     Critical(
+        uid: 4,
         title: "CO2 Level",
         indicator: "Conc.",
-        reading: 44,
         units: "ppm",
-        status: "Unacceptable",
-        color: .red,
-        image: "leaf.arrow.circlepath"
+        image: "leaf.arrow.circlepath",
+        data: [1.1, 4.7, 10.2]
     ),
     Critical(
+        uid: 5,
         title: "NO Level",
         indicator: "Conc.",
-        reading: 22,
         units: "ppm",
-        status: "Safe",
-        color: .green,
-        image: "leaf.arrow.circlepath"
+        image: "leaf.arrow.circlepath",
+        data: [1.1, 4.7, 10.2]
     )
 ]

@@ -28,7 +28,7 @@ struct CriticalCardView: View {
                         .foregroundColor(.black)
                         .font(.system(size: 14))
 
-                    Text(String(critical.reading) + " " + critical.units)
+                    Text(String(critical.getCurrentReading()!) + " " + critical.units)
                         .foregroundColor(.black)
                         .fontWeight(.bold)
                         .font(.system(size: 14))
@@ -40,12 +40,10 @@ struct CriticalCardView: View {
                         .foregroundColor(.black)
                         .font(.system(size: 14))
 
-                    Text(critical.status)
+                    Text(critical.getStatus())
                         .foregroundColor(.black)
                         .fontWeight(.bold)
-                        .font(.system(size: 14))
-
-                        
+                        .font(.system(size: 14))                        
                 }
                 .padding(.leading, 5)
                 .padding(.bottom, 5)
@@ -61,11 +59,9 @@ struct CriticalCardView: View {
                 .foregroundColor(.accentColor)
                 .padding(.trailing, 15)
                 .padding(.bottom, 15)
-                
-            
         }
         .frame(width: screen.width - 45, height: 100)
-        .background(LinearGradient(gradient: Gradient(colors: [critical.color, Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))]), startPoint: .trailing, endPoint: .leading))
+        .background(LinearGradient(gradient: Gradient(colors: [critical.getColor(), Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1))]), startPoint: .trailing, endPoint: .leading))
         .clipShape(RoundedRectangle(cornerRadius: 25))
         .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
         .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)

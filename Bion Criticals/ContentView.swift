@@ -9,10 +9,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var isLock: Bool = false
     @State var showConnect: Bool = false
     @State var showCharts: Bool = false
-    @State var whichChart: Int = 0
     @State var connectedBLE: Bool = false
     @State var bottomState = CGSize.zero
     @State var showControls: Int = 1
@@ -124,6 +122,8 @@ struct ControlsView: View {
     @Binding var showConnect: Bool
     @Binding var tappedControl: Int
     
+    @ObservedObject var criticalVM = CriticalViewModel()
+
     var body: some View {
         ScrollView {
             
@@ -139,9 +139,8 @@ struct ControlsView: View {
                 Spacer()
             }
             
-            
-            ForEach(Controls.indices){ index in
-                CriticalCardView(critical: Controls[index])
+            ForEach(criticalVM.controls.indices){ index in
+                CriticalCardView(critical: self.criticalVM.controls[index])
                     .padding(.bottom, 5)
                     .onTapGesture {
                         self.tappedControl = index
@@ -154,6 +153,7 @@ struct ControlsView: View {
 
 struct Modals: View {
     @Binding var tappedControl: Int
+    
     var body: some View {
         ZStack {
             PressureModal()
