@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct ContentView: View {
     @State var showConnect: Bool = false
@@ -15,6 +16,8 @@ struct ContentView: View {
     @State var bottomState = CGSize.zero
     @State var showControls: Int = 1
     @State var tappedControl: Int = -1
+        
+    @EnvironmentObject var criticalVM: CriticalViewModel
     
     var body: some View {
         ZStack {
@@ -26,7 +29,7 @@ struct ContentView: View {
                 .blur(radius: showConnect ? 30 : 0)
             
             NavBar(showControls: $showControls)
-                .offset(y: screen.height / 2.155)
+                .offset(y: screen.height / 2.22)
                 .blur(radius: showConnect || tappedControl > -1 ? 30 : 0)
             
             Color.black
@@ -39,26 +42,38 @@ struct ContentView: View {
                     self.tappedControl = -1
                 }
             
-            SettingsView(connectedBLE: $connectedBLE)
+            SettingsModal(connectedBLE: $connectedBLE)
                 .offset(x: showConnect ? 0 : 100)
                 .opacity(showConnect ? 1 : 0)
                 .animation(.spring())
+                .onAppear{
+                    if connectedBLE == true{
+                        //self.ble.setupBLE()
+                    }
+                }
             
             Modals(tappedControl: $tappedControl)
+        }.onAppear{
+            criticalVM.setupBLE()
         }
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(CriticalViewModel())
     }
 }
 
 struct Header: View {
     @State var showNotif = false
     @Binding var showConnect: Bool
-    
+    @State var pressurePercentage: CGFloat = 69
+    @State var pressureStatus = "Pressurizing"
+    @State var pressureTimeLeft = "2 min"
+            
+    @EnvironmentObject var critical: CriticalViewModel
+        
     var body: some View {
         ZStack {
             Color.green
@@ -75,10 +90,21 @@ struct Header: View {
                     
                     Spacer()
                     
+                    Button(action: { critical.refreshData() }) {
+                        Image(systemName: "arrow.clockwise")
+                            .renderingMode(.original)
+                            .font(.system(size: 17, weight: .medium))
+                            .frame(width: 36, height: 36)
+                            .background(Color.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.1), radius: 1, x: 0, y: 1)
+                            .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 10)
+                    }
+                    
                     Button(action: { self.showConnect.toggle() }) {
                         Image(systemName: "dot.radiowaves.left.and.right")
                             .renderingMode(.original)
-                            .font(.system(size: 16, weight: .medium))
+                            .font(.system(size: 17, weight: .medium))
                             .frame(width: 36, height: 36)
                             .background(Color.white)
                             .clipShape(Circle())
@@ -89,7 +115,7 @@ struct Header: View {
                     Button(action: { self.showNotif.toggle() }) {
                         Image(systemName: "bell")
                             .renderingMode(.original)
-                            .font(.system(size: 16, weight: .medium))
+                            .font(.system(size: 17, weight: .medium))
                             .frame(width: 36, height: 36)
                             .background(Color.white)
                             .clipShape(Circle())
@@ -106,7 +132,7 @@ struct Header: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 14) {
-                        SmlPressureCard()
+                        SmlPressureCard(percentComplete: $pressurePercentage, status: $pressureStatus, timeRemaining: $pressureTimeLeft)
                         SmlDoorCard()
                         SmlTempCard()
                     }
@@ -122,8 +148,8 @@ struct ControlsView: View {
     @Binding var showConnect: Bool
     @Binding var tappedControl: Int
     
-    @ObservedObject var criticalVM = CriticalViewModel()
-
+    @EnvironmentObject var critical: CriticalViewModel
+    
     var body: some View {
         ScrollView {
             
@@ -139,8 +165,8 @@ struct ControlsView: View {
                 Spacer()
             }
             
-            ForEach(criticalVM.controls.indices){ index in
-                CriticalCardView(critical: self.criticalVM.controls[index])
+            ForEach(critical.controls.indices){ index in
+                CriticalCardView(critical: self.critical.controls[index])
                     .padding(.bottom, 5)
                     .onTapGesture {
                         self.tappedControl = index

@@ -1,18 +1,13 @@
 //
-//  CriticalData.swift
+//  Critical.swift
 //  Bion Criticals
 //
-//  Created by Vaughn on 2020-07-31.
+//  Created by Vaughn on 2020-09-30.
 //  Copyright © 2020 Brick Squad. All rights reserved.
 //
 
+import Foundation
 import SwiftUI
-//import Combine
-
-class CriticalViewModel: ObservableObject{
-    @Published var controls: [Critical] = Controls
-    @Published var gases: [Critical] = Gases
-}
 
 struct Critical: Identifiable {
     var id = UUID()
@@ -23,12 +18,15 @@ struct Critical: Identifiable {
     var image: String       //SF symbols only. ie "rectangle.compress.vertical"
     var data: [Double]?
     
+    
     func getCurrentReading() -> Double?{
+        
         if let data = data?.last{
             return data
         }
         return 0
     }
+    
     
     func getColor() -> Color{
         if title == "Cabin Pressure"{
@@ -72,11 +70,26 @@ struct Critical: Identifiable {
         return "error"
     }
     
+//    let array = [1, 2, 3, 4]
+//    let arraySlice = array.suffix(2)
+//    let newArray = Array(arraySlice)
+//    print(newArray) // prints: [3, 4]
     func getLastFifteen() -> [Double]{
-        return [0,1]
+//        var arr = [Double]()
+//
+//        if let count = self.data?.count{
+//            if count >= 30{
+//                let arraySlice = self.data?.suffix(15)
+//                arr = Array(arraySlice!)
+//            } else{
+//                arr = (self.data)!
+//            }
+//        }
+        return (self.data)!
     }
 }
 
+///-------------------- Get Colors----------------------------------------------------------------
 extension Critical{
     private func getCabinPressureColor() -> Color{
         if let currentReading = getCurrentReading(){
@@ -146,6 +159,7 @@ extension Critical{
     }
 }
 
+///----------------------------------Status Updates -------------------------------------------------------
 extension Critical{
     private func getPressureStatus() -> String {
         return "pressurized"
@@ -167,57 +181,3 @@ extension Critical{
         return "Hello"
     }
 }
-
-var Controls = [
-    Critical(
-        uid: 0,
-        title: "Cabin Pressure",
-        indicator: "Pressure Level",
-        units: "PSI",
-        image: "rectangle.compress.vertical",
-        data: [7]
-    ),
-    Critical(
-        uid: 1,
-        title: "Door Locks",
-        indicator: "Activated",
-        units: "i/o",
-        image: "lock.circle",
-        data: [1.1, 4.7, 10.2]
-    ),
-    Critical(
-        uid: 2,
-        title: "Cabin Temperature",
-        indicator: "Temp",
-        units: "c",
-        image: "thermometer",
-        data: [1.1, 4.7, 10.2]
-    )
-]
-
-var Gases = [
-    Critical(
-        uid: 3,
-        title: "CO Level",
-        indicator: "Conc.",
-        units: "ppm",
-        image: "leaf.arrow.circlepath",
-        data: [1.1, 4.7, 10.2]
-    ),
-    Critical(
-        uid: 4,
-        title: "CO2 Level",
-        indicator: "Conc.",
-        units: "ppm",
-        image: "leaf.arrow.circlepath",
-        data: [1.1, 4.7, 10.2]
-    ),
-    Critical(
-        uid: 5,
-        title: "NO Level",
-        indicator: "Conc.",
-        units: "ppm",
-        image: "leaf.arrow.circlepath",
-        data: [1.1, 4.7, 10.2]
-    )
-]

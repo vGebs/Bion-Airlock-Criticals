@@ -9,12 +9,10 @@
 /* Begin PBXBuildFile section */
 		FA17B97524F8491A00C51CB8 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17B97424F8491A00C51CB8 /* NavBar.swift */; };
 		FA17B97724F852AD00C51CB8 /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17B97624F852AD00C51CB8 /* ChartsView.swift */; };
-		FA4F84AD24B3DAE900116CEA /* BLE.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4F84AC24B3DAE900116CEA /* BLE.swift */; };
-		FA7362D924E49AB80067A481 /* DoorStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7362D824E49AB80067A481 /* DoorStatusView.swift */; };
 		FA765F862489C8D0006CB76A /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA765F852489C8D0006CB76A /* NotificationsView.swift */; };
 		FA771B58248C3877000774D7 /* NotificationsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA771B57248C3877000774D7 /* NotificationsDetail.swift */; };
 		FA771B5A248C45C5000774D7 /* NotificationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA771B59248C45C5000774D7 /* NotificationStore.swift */; };
-		FA771B5F248C4E67000774D7 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA771B5E248C4E67000774D7 /* SettingsView.swift */; };
+		FA771B5F248C4E67000774D7 /* SettingsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA771B5E248C4E67000774D7 /* SettingsModal.swift */; };
 		FA771B65248C8C0C000774D7 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = FA771B64248C8C0C000774D7 /* SwiftUICharts */; };
 		FA771B6A248CA4A4000774D7 /* SmallCriticalCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA771B69248CA4A4000774D7 /* SmallCriticalCards.swift */; };
 		FA7E728324FD80D000CEAB9F /* TempModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E728224FD80D000CEAB9F /* TempModal.swift */; };
@@ -30,19 +28,18 @@
 		FAA29FCC248615BA0046CD32 /* CriticalCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA29FCB248615BA0046CD32 /* CriticalCardView.swift */; };
 		FAA29FCE24862CA90046CD32 /* RingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA29FCD24862CA90046CD32 /* RingView.swift */; };
 		FAA29FD024862E530046CD32 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA29FCF24862E530046CD32 /* Modifiers.swift */; };
-		FAF809B124CF7F4F00020D07 /* ChartCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF809B024CF7F4F00020D07 /* ChartCardView.swift */; };
-		FAF809B724D4D15900020D07 /* CriticalData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF809B624D4D15900020D07 /* CriticalData.swift */; };
+		FAD85F662525656F00451942 /* Critical Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD85F652525656F00451942 /* Critical Data.swift */; };
+		FAD85F6B252565BB00451942 /* Critical.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD85F6A252565BB00451942 /* Critical.swift */; };
+		FAF809B724D4D15900020D07 /* Critical VM.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF809B624D4D15900020D07 /* Critical VM.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FA17B97424F8491A00C51CB8 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		FA17B97624F852AD00C51CB8 /* ChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
-		FA4F84AC24B3DAE900116CEA /* BLE.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLE.swift; sourceTree = "<group>"; };
-		FA7362D824E49AB80067A481 /* DoorStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorStatusView.swift; sourceTree = "<group>"; };
 		FA765F852489C8D0006CB76A /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 		FA771B57248C3877000774D7 /* NotificationsDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsDetail.swift; sourceTree = "<group>"; };
 		FA771B59248C45C5000774D7 /* NotificationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationStore.swift; sourceTree = "<group>"; };
-		FA771B5E248C4E67000774D7 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		FA771B5E248C4E67000774D7 /* SettingsModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsModal.swift; sourceTree = "<group>"; };
 		FA771B69248CA4A4000774D7 /* SmallCriticalCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SmallCriticalCards.swift; sourceTree = "<group>"; };
 		FA7E728224FD80D000CEAB9F /* TempModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempModal.swift; sourceTree = "<group>"; };
 		FA7E728424FD874100CEAB9F /* DoorModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorModal.swift; sourceTree = "<group>"; };
@@ -59,8 +56,9 @@
 		FAA29FCB248615BA0046CD32 /* CriticalCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriticalCardView.swift; sourceTree = "<group>"; };
 		FAA29FCD24862CA90046CD32 /* RingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RingView.swift; sourceTree = "<group>"; };
 		FAA29FCF24862E530046CD32 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
-		FAF809B024CF7F4F00020D07 /* ChartCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCardView.swift; sourceTree = "<group>"; };
-		FAF809B624D4D15900020D07 /* CriticalData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriticalData.swift; sourceTree = "<group>"; };
+		FAD85F652525656F00451942 /* Critical Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Critical Data.swift"; sourceTree = "<group>"; };
+		FAD85F6A252565BB00451942 /* Critical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critical.swift; sourceTree = "<group>"; };
+		FAF809B624D4D15900020D07 /* Critical VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Critical VM.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +73,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA06B321251330DF00258290 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				FA771B5E248C4E67000774D7 /* SettingsModal.swift */,
+				FA7E728624FD89DE00CEAB9F /* PressureModal.swift */,
+				FA7E728224FD80D000CEAB9F /* TempModal.swift */,
+				FA7E728424FD874100CEAB9F /* DoorModal.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
 		FA771B5B248C4DDA000774D7 /* Notifications Model & View */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,16 +98,11 @@
 			isa = PBXGroup;
 			children = (
 				FAA29FCB248615BA0046CD32 /* CriticalCardView.swift */,
-				FAA29FCD24862CA90046CD32 /* RingView.swift */,
-				FA771B69248CA4A4000774D7 /* SmallCriticalCards.swift */,
-				FAF809B024CF7F4F00020D07 /* ChartCardView.swift */,
-				FA7362D824E49AB80067A481 /* DoorStatusView.swift */,
-				FA17B97424F8491A00C51CB8 /* NavBar.swift */,
 				FA17B97624F852AD00C51CB8 /* ChartsView.swift */,
-				FA7E728424FD874100CEAB9F /* DoorModal.swift */,
-				FA7E728224FD80D000CEAB9F /* TempModal.swift */,
-				FA7E728624FD89DE00CEAB9F /* PressureModal.swift */,
-				FA771B5E248C4E67000774D7 /* SettingsView.swift */,
+				FA771B69248CA4A4000774D7 /* SmallCriticalCards.swift */,
+				FA17B97424F8491A00C51CB8 /* NavBar.swift */,
+				FAA29FCD24862CA90046CD32 /* RingView.swift */,
+				FA06B321251330DF00258290 /* Modals */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -109,21 +113,6 @@
 				FAA29FCF24862E530046CD32 /* Modifiers.swift */,
 			);
 			path = Modifiers;
-			sourceTree = "<group>";
-		};
-		FA771B60248C4EE9000774D7 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				FA4F84AC24B3DAE900116CEA /* BLE.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		FA85DC73250700A1003793D3 /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Entities;
 			sourceTree = "<group>";
 		};
 		FAA29FA92485C0D00046CD32 = {
@@ -150,7 +139,6 @@
 				FAA29FB92485C0D00046CD32 /* ContentView.swift */,
 				FA771B5C248C4E02000774D7 /* Views */,
 				FAF809BA24D6920C00020D07 /* Models */,
-				FA771B60248C4EE9000774D7 /* Services */,
 				FA771B5B248C4DDA000774D7 /* Notifications Model & View */,
 				FA771B5D248C4E3B000774D7 /* Modifiers */,
 				FAA29FC92485C1250046CD32 /* Planning.rtf */,
@@ -170,11 +158,28 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		FAD85F642525654200451942 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				FAD85F652525656F00451942 /* Critical Data.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		FAD85F692525659200451942 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				FAD85F6A252565BB00451942 /* Critical.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		FAF809BA24D6920C00020D07 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FA85DC73250700A1003793D3 /* Entities */,
-				FAF809B624D4D15900020D07 /* CriticalData.swift */,
+				FAF809B624D4D15900020D07 /* Critical VM.swift */,
+				FAD85F642525654200451942 /* Data */,
+				FAD85F692525659200451942 /* Entities */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,16 +266,15 @@
 				FA771B5A248C45C5000774D7 /* NotificationStore.swift in Sources */,
 				FA17B97524F8491A00C51CB8 /* NavBar.swift in Sources */,
 				FAA29FCE24862CA90046CD32 /* RingView.swift in Sources */,
+				FAD85F6B252565BB00451942 /* Critical.swift in Sources */,
 				FA771B58248C3877000774D7 /* NotificationsDetail.swift in Sources */,
 				FAA29FB62485C0D00046CD32 /* AppDelegate.swift in Sources */,
-				FA7362D924E49AB80067A481 /* DoorStatusView.swift in Sources */,
 				FAA29FCC248615BA0046CD32 /* CriticalCardView.swift in Sources */,
 				FA7E728324FD80D000CEAB9F /* TempModal.swift in Sources */,
-				FA771B5F248C4E67000774D7 /* SettingsView.swift in Sources */,
+				FA771B5F248C4E67000774D7 /* SettingsModal.swift in Sources */,
 				FAA29FB82485C0D00046CD32 /* SceneDelegate.swift in Sources */,
-				FAF809B724D4D15900020D07 /* CriticalData.swift in Sources */,
-				FA4F84AD24B3DAE900116CEA /* BLE.swift in Sources */,
-				FAF809B124CF7F4F00020D07 /* ChartCardView.swift in Sources */,
+				FAD85F662525656F00451942 /* Critical Data.swift in Sources */,
+				FAF809B724D4D15900020D07 /* Critical VM.swift in Sources */,
 				FA771B6A248CA4A4000774D7 /* SmallCriticalCards.swift in Sources */,
 				FA17B97724F852AD00C51CB8 /* ChartsView.swift in Sources */,
 				FA7E728524FD874100CEAB9F /* DoorModal.swift in Sources */,

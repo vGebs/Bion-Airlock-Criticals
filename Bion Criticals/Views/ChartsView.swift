@@ -11,6 +11,8 @@ import SwiftUICharts
 
 struct ChartsView: View {
     @Binding var showConnect: Bool
+
+    @EnvironmentObject var critical: CriticalViewModel
     
     var body: some View {
         ScrollView {
@@ -26,9 +28,9 @@ struct ChartsView: View {
                 Spacer()
             }
             
-            ForEach(Controls){ control in
+            ForEach(critical.controls){ control in
                 if control.title != "Door Locks"{
-                    BarChartView(data: ChartData(points: [8,23,54,32,12,37,7,23,43, 45, 61, 73, 22]), title: control.title, form: ChartForm.large, cornerImage: Image(systemName: control.image))
+                    BarChartView(data: ChartData(points: control.getLastFifteen()), title: control.title, form: ChartForm.large, cornerImage: Image(systemName: control.image))
                     .frame(width: screen.width - 20)
                     .padding(.bottom, 40)
                 }
@@ -43,8 +45,8 @@ struct ChartsView: View {
                 Spacer()
             }
             
-            ForEach(Gases){ gas in
-                BarChartView(data: ChartData(points: [8,23,54,32,12,37,7,23,43]), title: gas.title, form: ChartForm.large, cornerImage: Image(systemName: gas.image))
+            ForEach(critical.gases){ gas in
+                BarChartView(data: ChartData(points: gas.getLastFifteen()), title: gas.title, form: ChartForm.large, cornerImage: Image(systemName: gas.image))
                 .frame(width: screen.width - 20)
                 .padding(.bottom, 40)
             }
@@ -54,6 +56,6 @@ struct ChartsView: View {
 
 struct ChartsView_Previews: PreviewProvider {
     static var previews: some View {
-        ChartsView(showConnect: .constant(false))
+        ChartsView(showConnect: .constant(false)).environmentObject(CriticalViewModel())
     }
 }

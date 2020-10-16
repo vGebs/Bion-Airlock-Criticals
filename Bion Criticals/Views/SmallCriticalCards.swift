@@ -9,16 +9,20 @@
 import SwiftUI
 
 struct SmlPressureCard: View {
+    @Binding var percentComplete: CGFloat
+    @Binding var status: String
+    @Binding var timeRemaining: String
+    
     var body: some View {
         HStack(spacing: 12) {
-            RingView(color1: #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1), color2: #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1), width: 36, height: 36, percent: 78, show: .constant(true))
+            RingView(color1: #colorLiteral(red: 0, green: 0.9768045545, blue: 0, alpha: 1), color2: #colorLiteral(red: 1, green: 0.1491314173, blue: 0, alpha: 1), width: 36, height: 36, percent: percentComplete, show: .constant(true))
             
             VStack(alignment: .leading, spacing: 4) {
-                Text("Pressurizing")
+                Text(status)
                     .bold()
                     .modifier(FontModifier(style: .subheadline))
                 
-                Text("4 minutes left")
+                Text(timeRemaining)
                     .modifier(FontModifier(style: .caption))
             }
         }

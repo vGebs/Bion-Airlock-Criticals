@@ -45,7 +45,7 @@ void loop() {
       Serial.print("temp level from tempLevelChar: ");
       Serial.print(tempLevelChar.value());
       Serial.print(" ");
-      delay(2000); //delays 2 seconds
+      //delay(2000); //delays 2 seconds
     }
   }
 

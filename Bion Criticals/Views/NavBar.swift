@@ -18,20 +18,20 @@ struct NavBar: View {
             Button(action: { self.showControls = 1 }){
                 Image(systemName: showControls == 1 ? "hexagon.fill" : "hexagon")
                     .resizable()
-                    .frame(width: 30, height: 30)
+                    .frame(width: 40, height: 40)
             }
             
             Spacer()
-            
+            Spacer()
             Button(action: { self.showControls = 0 }){
                 Image(systemName: showControls == 0 ? "chart.bar.fill" : "chart.bar")
                 .resizable()
-                .frame(width: 30, height: 25)
+                .frame(width: 40, height: 35)
             }
             
             Spacer()
         }
-        .frame(height: 55)
+        .frame(height: 75)
         .background(Color.green.opacity(0.3))
         .background(Color.white)
     }

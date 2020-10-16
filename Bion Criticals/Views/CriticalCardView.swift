@@ -28,7 +28,7 @@ struct CriticalCardView: View {
                         .foregroundColor(.black)
                         .font(.system(size: 14))
 
-                    Text(String(critical.getCurrentReading()!) + " " + critical.units)
+                    Text(String(format: "%.01f",critical.getCurrentReading()!) + " " + critical.units)
                         .foregroundColor(.black)
                         .fontWeight(.bold)
                         .font(.system(size: 14))
@@ -69,6 +69,7 @@ struct CriticalCardView: View {
 }
 
 struct CriticalCardView_Previews: PreviewProvider {
+    
     static var previews: some View {
         CriticalCardView(critical: Controls[0])
     }

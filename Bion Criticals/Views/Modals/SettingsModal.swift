@@ -8,20 +8,14 @@
 
 import SwiftUI
 
-struct SettingsView: View {
-    let ble = BLE()
-    
+struct SettingsModal: View {    
     @Binding var connectedBLE: Bool
-    
+
     var body: some View {
             
         VStack(spacing: 16) {
-            Button (action: {
-                DispatchQueue.global(qos: .background).async {  //FIX ME FUCK
-                    self.ble.setupBLE()
-                }
-            }) {
-                MenuRow(title: connectedBLE ? "Connected" : "Connect", icon: "gear")
+            Button (action: { self.connectedBLE.toggle() }) {
+                MenuRow(title: connectedBLE ? "Disconnect" : "Connect", icon: "gear")
             }
             Button (action: {}) {
                 MenuRow(title: "Sign out", icon: "person.crop.circle")
@@ -57,9 +51,9 @@ struct SettingsView: View {
     }
 }
 
-struct SettingsView_Previews: PreviewProvider {
+struct SettingsModal_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView(connectedBLE: .constant(false))
+        SettingsModal(connectedBLE: .constant(false))
     }
 }
 
