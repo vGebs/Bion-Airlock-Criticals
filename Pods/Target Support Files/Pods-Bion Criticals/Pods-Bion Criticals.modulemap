@@ -1,0 +1,6 @@
+framework module Pods_Bion_Criticals {
+  umbrella header "Pods-Bion Criticals-umbrella.h"
+
+  export *
+  module * { export * }
+}

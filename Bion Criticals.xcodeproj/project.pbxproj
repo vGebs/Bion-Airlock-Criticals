@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		776914D4195294E83CE61056 /* Pods_Bion_Criticals.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6B08CD8BCE8D98CC058AE2B /* Pods_Bion_Criticals.framework */; };
 		FA17B97524F8491A00C51CB8 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17B97424F8491A00C51CB8 /* NavBar.swift */; };
 		FA17B97724F852AD00C51CB8 /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA17B97624F852AD00C51CB8 /* ChartsView.swift */; };
 		FA765F862489C8D0006CB76A /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA765F852489C8D0006CB76A /* NotificationsView.swift */; };
 		FA771B58248C3877000774D7 /* NotificationsDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA771B57248C3877000774D7 /* NotificationsDetail.swift */; };
 		FA771B5A248C45C5000774D7 /* NotificationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA771B59248C45C5000774D7 /* NotificationStore.swift */; };
 		FA771B5F248C4E67000774D7 /* SettingsModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA771B5E248C4E67000774D7 /* SettingsModal.swift */; };
-		FA771B65248C8C0C000774D7 /* SwiftUICharts in Frameworks */ = {isa = PBXBuildFile; productRef = FA771B64248C8C0C000774D7 /* SwiftUICharts */; };
+		FA771B65248C8C0C000774D7 /* BuildFile in Frameworks */ = {isa = PBXBuildFile; productRef = FA771B64248C8C0C000774D7 /* SwiftPackageProductDependency */; };
 		FA771B6A248CA4A4000774D7 /* SmallCriticalCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA771B69248CA4A4000774D7 /* SmallCriticalCards.swift */; };
 		FA7E728324FD80D000CEAB9F /* TempModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E728224FD80D000CEAB9F /* TempModal.swift */; };
 		FA7E728524FD874100CEAB9F /* DoorModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E728424FD874100CEAB9F /* DoorModal.swift */; };
 		FA7E728724FD89DE00CEAB9F /* PressureModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7E728624FD89DE00CEAB9F /* PressureModal.swift */; };
+		FA8C2F0E255CA10B00C5BE60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FA8C2F0D255CA10A00C5BE60 /* GoogleService-Info.plist */; };
 		FAA29FB62485C0D00046CD32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA29FB52485C0D00046CD32 /* AppDelegate.swift */; };
 		FAA29FB82485C0D00046CD32 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA29FB72485C0D00046CD32 /* SceneDelegate.swift */; };
 		FAA29FBA2485C0D00046CD32 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA29FB92485C0D00046CD32 /* ContentView.swift */; };
@@ -34,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		61A112C3F2AA04C198BCA123 /* Pods-Bion Criticals.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bion Criticals.debug.xcconfig"; path = "Target Support Files/Pods-Bion Criticals/Pods-Bion Criticals.debug.xcconfig"; sourceTree = "<group>"; };
+		9A7C6DD999A2305A688C55CE /* Pods-Bion Criticals.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bion Criticals.release.xcconfig"; path = "Target Support Files/Pods-Bion Criticals/Pods-Bion Criticals.release.xcconfig"; sourceTree = "<group>"; };
+		A6B08CD8BCE8D98CC058AE2B /* Pods_Bion_Criticals.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bion_Criticals.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA17B97424F8491A00C51CB8 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
 		FA17B97624F852AD00C51CB8 /* ChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
 		FA765F852489C8D0006CB76A /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
@@ -44,6 +49,7 @@
 		FA7E728224FD80D000CEAB9F /* TempModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempModal.swift; sourceTree = "<group>"; };
 		FA7E728424FD874100CEAB9F /* DoorModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorModal.swift; sourceTree = "<group>"; };
 		FA7E728624FD89DE00CEAB9F /* PressureModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PressureModal.swift; sourceTree = "<group>"; };
+		FA8C2F0D255CA10A00C5BE60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FAA29FB22485C0D00046CD32 /* Bion Criticals.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bion Criticals.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAA29FB52485C0D00046CD32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAA29FB72485C0D00046CD32 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,13 +72,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA771B65248C8C0C000774D7 /* SwiftUICharts in Frameworks */,
+				FA771B65248C8C0C000774D7 /* BuildFile in Frameworks */,
+				776914D4195294E83CE61056 /* Pods_Bion_Criticals.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1390274CEA4F8F63D2A228E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				61A112C3F2AA04C198BCA123 /* Pods-Bion Criticals.debug.xcconfig */,
+				9A7C6DD999A2305A688C55CE /* Pods-Bion Criticals.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		2B5769C334B61AC0B5E1561B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6B08CD8BCE8D98CC058AE2B /* Pods_Bion_Criticals.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FA06B321251330DF00258290 /* Modals */ = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +145,8 @@
 			children = (
 				FAA29FB42485C0D00046CD32 /* Bion Criticals */,
 				FAA29FB32485C0D00046CD32 /* Products */,
+				1390274CEA4F8F63D2A228E8 /* Pods */,
+				2B5769C334B61AC0B5E1561B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,6 +171,7 @@
 				FAA29FC92485C1250046CD32 /* Planning.rtf */,
 				FAA29FBB2485C0D50046CD32 /* Assets.xcassets */,
 				FAA29FC02485C0D50046CD32 /* LaunchScreen.storyboard */,
+				FA8C2F0D255CA10A00C5BE60 /* GoogleService-Info.plist */,
 				FAA29FC32485C0D50046CD32 /* Info.plist */,
 				FAA29FBD2485C0D50046CD32 /* Preview Content */,
 			);
@@ -191,9 +219,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAA29FC62485C0D50046CD32 /* Build configuration list for PBXNativeTarget "Bion Criticals" */;
 			buildPhases = (
+				B963DA8BF89EAAC8FEC77DBE /* [CP] Check Pods Manifest.lock */,
 				FAA29FAE2485C0D00046CD32 /* Sources */,
 				FAA29FAF2485C0D00046CD32 /* Frameworks */,
 				FAA29FB02485C0D00046CD32 /* Resources */,
+				FA8E312D93EB9ACD3B02D6EB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -201,7 +231,7 @@
 			);
 			name = "Bion Criticals";
 			packageProductDependencies = (
-				FA771B64248C8C0C000774D7 /* SwiftUICharts */,
+				FA771B64248C8C0C000774D7 /* SwiftPackageProductDependency */,
 			);
 			productName = "Bion Criticals";
 			productReference = FAA29FB22485C0D00046CD32 /* Bion Criticals.app */;
@@ -214,7 +244,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Brick Squad";
 				TargetAttributes = {
 					FAA29FB12485C0D00046CD32 = {
@@ -232,7 +262,7 @@
 			);
 			mainGroup = FAA29FA92485C0D00046CD32;
 			packageReferences = (
-				FA771B63248C8C0C000774D7 /* XCRemoteSwiftPackageReference "ChartView" */,
+				FA771B63248C8C0C000774D7 /* RemoteSwiftPackageReference */,
 			);
 			productRefGroup = FAA29FB32485C0D00046CD32 /* Products */;
 			projectDirPath = "";
@@ -251,11 +281,54 @@
 				FAA29FC22485C0D50046CD32 /* LaunchScreen.storyboard in Resources */,
 				FAA29FCA2485C1250046CD32 /* Planning.rtf in Resources */,
 				FAA29FBF2485C0D50046CD32 /* Preview Assets.xcassets in Resources */,
+				FA8C2F0E255CA10B00C5BE60 /* GoogleService-Info.plist in Resources */,
 				FAA29FBC2485C0D50046CD32 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B963DA8BF89EAAC8FEC77DBE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bion Criticals-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA8E312D93EB9ACD3B02D6EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bion Criticals/Pods-Bion Criticals-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bion Criticals/Pods-Bion Criticals-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bion Criticals/Pods-Bion Criticals-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FAA29FAE2485C0D00046CD32 /* Sources */ = {
@@ -324,6 +397,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -384,6 +458,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -414,6 +489,7 @@
 		};
 		FAA29FC72485C0D50046CD32 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 61A112C3F2AA04C198BCA123 /* Pods-Bion Criticals.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -434,6 +510,7 @@
 		};
 		FAA29FC82485C0D50046CD32 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9A7C6DD999A2305A688C55CE /* Pods-Bion Criticals.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -476,7 +553,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		FA771B63248C8C0C000774D7 /* XCRemoteSwiftPackageReference "ChartView" */ = {
+		FA771B63248C8C0C000774D7 /* RemoteSwiftPackageReference */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/AppPear/ChartView";
 			requirement = {
@@ -487,9 +564,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		FA771B64248C8C0C000774D7 /* SwiftUICharts */ = {
+		FA771B64248C8C0C000774D7 /* SwiftPackageProductDependency */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = FA771B63248C8C0C000774D7 /* XCRemoteSwiftPackageReference "ChartView" */;
+			package = FA771B63248C8C0C000774D7 /* RemoteSwiftPackageReference */;
 			productName = SwiftUICharts;
 		};
 /* End XCSwiftPackageProductDependency section */

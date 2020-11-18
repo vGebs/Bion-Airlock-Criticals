@@ -46,13 +46,9 @@ struct ContentView: View {
                 .offset(x: showConnect ? 0 : 100)
                 .opacity(showConnect ? 1 : 0)
                 .animation(.spring())
-                .onAppear{
-                    if connectedBLE == true{
-                        //self.ble.setupBLE()
-                    }
-                }
             
             Modals(tappedControl: $tappedControl)
+            
         }.onAppear{
             criticalVM.setupBLE()
         }

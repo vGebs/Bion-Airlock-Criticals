@@ -8,6 +8,14 @@
 
 import Foundation
 import SwiftUI
+import FirebaseFirestore
+import FirebaseFirestoreSwift
+
+struct Values: Encodable, Decodable, Identifiable{
+    @DocumentID var id: String?
+    @ServerTimestamp var createdTime: Timestamp?
+    var value: Double
+}
 
 struct Critical: Identifiable {
     var id = UUID()
@@ -16,12 +24,12 @@ struct Critical: Identifiable {
     var indicator: String   //ie Pressure Level
     var units: String       //ie PSI
     var image: String       //SF symbols only. ie "rectangle.compress.vertical"
-    var data: [Double]?
+    var data: [Values]?
     
     
     func getCurrentReading() -> Double?{
         
-        if let data = data?.last{
+        if let data = data?.last?.value{
             return data
         }
         return 0
@@ -32,7 +40,7 @@ struct Critical: Identifiable {
         if title == "Cabin Pressure"{
             return getCabinPressureColor()
         } else if title == "Door Locks"{
-            if data?.last == 1{
+            if data?.last?.value == 1{
                 return .green
             } else{
                 return .red
@@ -53,7 +61,7 @@ struct Critical: Identifiable {
         if title == "Cabin Pressure"{
             return getPressureStatus()
         } else if title == "Door Locks"{
-            if data?.last == 1{
+            if data?.last?.value == 1{
                 return "Activated"
             } else{
                 return "Deactivated"
@@ -75,6 +83,15 @@ struct Critical: Identifiable {
 //    let newArray = Array(arraySlice)
 //    print(newArray) // prints: [3, 4]
     func getLastFifteen() -> [Double]{
+        var arr = [Double]()
+        if let data = data{
+            for values in data{
+                arr.append(values.value)
+            }
+            return arr
+        } else {
+            return arr
+        }
 //        var arr = [Double]()
 //
 //        if let count = self.data?.count{
@@ -85,7 +102,7 @@ struct Critical: Identifiable {
 //                arr = (self.data)!
 //            }
 //        }
-        return (self.data)!
+        //return (self.data)!
     }
 }
 

@@ -1,9 +1,9 @@
 #include <ArduinoBLE.h>
 //16.06 == 0x00848041
 BLEService airlockCriticalService("1000");
-BLEFloatCharacteristic pressureLevelChar("1001", BLERead | BLENotify);
-BLEIntCharacteristic doorStatusChar("1002", BLERead | BLENotify);
-BLEFloatCharacteristic tempLevelChar("1003", BLERead | BLENotify);
+BLEFloatCharacteristic pressureLevelChar("1001", BLERead | BLENotify | BLEWrite);
+BLEIntCharacteristic doorStatusChar("1002", BLERead | BLENotify | BLEWrite);
+BLEFloatCharacteristic tempLevelChar("1003", BLERead | BLENotify | BLEWrite);
 
 const int tempSensorPin = A0;
 const float baselineTemp = 20.0;
@@ -33,7 +33,8 @@ void setup() {
 
 void loop() {
   BLEDevice central = BLE.central();
-
+  bool doorStatus = false;
+  
   if (central) 
   {
     Serial.print("Connected to central: ");

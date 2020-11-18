@@ -13,18 +13,18 @@
 
 //CoreBluetooth Tutorial https://www.raywenderlich.com/231-core-bluetooth-tutorial-for-ios-heart-rate-monitor#toc-anchor-012
 
-//Quick thoughts,
-//      Because we are using this data throughout the app, we should be using an environment object.
-//      With that being said, we are going to make the BLE class the viewmodel because it doing the fetching for us.
-//      It will also allow us to send and recieve data. So w that being said, we are going to rename the BLE class and make it into a viewmodel class that fetches the data continuously and place it in the right location, when this data changes, it should automatically update ui.
 
 import SwiftUI
 import CoreBluetooth
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 class CriticalViewModel: NSObject, CBCentralManagerDelegate, CBPeripheralDelegate, ObservableObject {
     
     @Published var controls: [Critical] = Controls
     @Published var gases: [Critical] = Gases
+    
+    let db = Firestore.firestore()
     
     func refreshData(){
         
@@ -39,7 +39,7 @@ class CriticalViewModel: NSObject, CBCentralManagerDelegate, CBPeripheralDelegat
     }
     
     func doorSet(){
-        
+        //doorStatusPeripheral?.writeValue(<#T##data: Data##Data#>, for: <#T##CBDescriptor#>)
     }
     
 //    func addData(critical: Bool, CriticalID: Int, data: Double){
@@ -49,6 +49,31 @@ class CriticalViewModel: NSObject, CBCentralManagerDelegate, CBPeripheralDelegat
 //            self.gases[CriticalID].data?.append(data)
 //        }
 //    }
+    
+    func addDataToRepo(data: Values){
+        
+        if let docID = data.id{
+            if let timestamp = data.createdTime{
+                
+                let dataRep: [String: Any] = [
+                    "data" : FieldValue.arrayUnion([data.value]),
+                    "timeStamp" : FieldValue.arrayUnion([timestamp])
+                ]
+                
+                db.collection("Critical Data").document(docID).updateData(dataRep){ error in
+                    if let error = error {
+                        print("Error writing docuemnt: \(error)" )
+                    } else {
+                        print("Writing to document successful")
+                    }
+                }
+            } else {
+                print("Unable to obtain timestamp")
+            }
+        } else {
+            print("Unable to obtain document ID")
+        }
+    }
     
     func setupBLE(){
         centralManager = CBCentralManager(delegate: self, queue: nil)
@@ -62,6 +87,19 @@ class CriticalViewModel: NSObject, CBCentralManagerDelegate, CBPeripheralDelegat
     let pressureLevelCharCBUUID = CBUUID(string: "1001")
     let doorStatusCharCBUUID = CBUUID(string: "1002")
     let tempLevelCharCBUUID = CBUUID(string: "1003")
+    
+    //let gas1CharCBUUID = CBUUID(string: "1004")
+    //let gas2CharCBUUID = CBUUID(string: "1005")
+    //let gas3CharCBUUID = CBUUID(string: "1006")
+    
+    var pressureLevelChar: CBCharacteristic?
+    var doorStatusChar: CBCharacteristic?
+    var tempLevelChar: CBCharacteristic?
+    
+    var pressureLevelPeripheral: CBPeripheral?
+    var doorStatusPeripheral: CBPeripheral?
+    var tempLevelPeripheral: CBPeripheral?
+
 }
 
 extension CriticalViewModel {
@@ -89,7 +127,7 @@ extension CriticalViewModel {
     
     func centralManager(_ central: CBCentralManager, didDiscover peripheral: CBPeripheral,
                         advertisementData: [String: Any], rssi RSSI: NSNumber) {
-        if peripheral.name == "Arduino"{
+        if peripheral.name == "Arduino" {
             arduinoPeripheral = peripheral
             arduinoPeripheral.delegate = self
             centralManager.stopScan()
@@ -118,6 +156,21 @@ extension CriticalViewModel {
       for characteristic in characteristics {
         print(characteristic)
         
+        switch characteristic.uuid {
+            case pressureLevelCharCBUUID:
+                pressureLevelPeripheral = peripheral
+                
+            case doorStatusCharCBUUID:
+                doorStatusPeripheral = peripheral
+                
+            case tempLevelCharCBUUID:
+                tempLevelPeripheral = peripheral
+
+        default:
+            print("Unhandled Characteristic UUID: \(characteristic.uuid)")
+
+        }
+        
         if characteristic.properties.contains(.read) {
             print("\(characteristic.uuid): properties contains .read")
           
@@ -142,7 +195,12 @@ extension CriticalViewModel {
                 let value = Double(nsdataToString.hexToFloat())
                 print(value)
                 
-                controls[0].data?.append(value)
+                //initialize pressure characteristic
+                pressureLevelChar = characteristic
+                
+                let pressure = Values(id: "pressure", createdTime: Timestamp(date: Date()), value: value)
+                controls[0].data?.append(pressure)
+                addDataToRepo(data: pressure)
             }
         
         case doorStatusCharCBUUID:
@@ -153,7 +211,12 @@ extension CriticalViewModel {
                 let value = Double(nsdataToString.hexToFloat())
                 print(value)
                 
-                controls[1].data?.append(value)
+                //initialize door characteristic
+                doorStatusChar = characteristic
+                
+                let door = Values(id: "doorStatus", createdTime: Timestamp(date: Date()), value: value)
+                controls[1].data?.append(door)
+                addDataToRepo(data: door)
             }
         
         case tempLevelCharCBUUID:
@@ -164,13 +227,30 @@ extension CriticalViewModel {
                 let value = Double(nsdataToString.hexToFloat())
                 print(value)
                 
-                controls[2].data?.append(value)
+                //initialize temp characteristic
+                tempLevelChar = characteristic
+                
+                let temp = Values(id: "temperature", createdTime: Timestamp(date: Date()), value: value)
+                controls[2].data?.append(temp)
+                addDataToRepo(data: temp)
             }
         
         default:
             print("Unhandled Characteristic UUID: \(characteristic.uuid)")
       }
     }
+    
+//    func peripheral(_ peripheral: CBPeripheral, didWriteValueFor characteristic: CBCharacteristic, error: Error?) {
+//        <#code#>
+//    }
+//
+//    func peripheral(_ peripheral: CBPeripheral, didWriteValueFor descriptor: CBDescriptor, error: Error?) {
+//        <#code#>
+//    }
+//
+//    func peripheralIsReady(toSendWriteWithoutResponse peripheral: CBPeripheral) {
+//        <#code#>
+//    }
 }
 
 public extension String{

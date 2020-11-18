@@ -15,7 +15,7 @@ var Controls = [
         indicator: "Pressure Level",
         units: "PSI",
         image: "rectangle.compress.vertical",
-        data: [7, 2, 5, 2, 13, 22]
+        data: []
     ),
     Critical(
         uid: 1,
@@ -23,7 +23,7 @@ var Controls = [
         indicator: "Activated",
         units: "i/o",
         image: "lock.circle",
-        data: [1.1, 4.7, 10.2]
+        data: []
     ),
     Critical(
         uid: 2,
@@ -42,7 +42,7 @@ var Gases = [
         indicator: "Conc.",
         units: "ppm",
         image: "leaf.arrow.circlepath",
-        data: [1.1, 4.7, 10.2]
+        data: []
     ),
     Critical(
         uid: 4,
@@ -50,7 +50,7 @@ var Gases = [
         indicator: "Conc.",
         units: "ppm",
         image: "leaf.arrow.circlepath",
-        data: [1.1, 4.7, 10.2]
+        data: []
     ),
     Critical(
         uid: 5,
@@ -58,6 +58,6 @@ var Gases = [
         indicator: "Conc.",
         units: "ppm",
         image: "leaf.arrow.circlepath",
-        data: [1.1, 4.7, 10.2]
+        data: []
     )
 ]
